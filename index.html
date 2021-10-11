@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+function Student(name, address, phone, course) {
+
+this.name = name;
+this.address = address;
+this.phone = phone;
+this.course = course;
+
+this.getName = function () {
+
+return this.name + " " + this.address;
+
+}
+
+this.getInfo = function () {
+
+return "Name: " + this.name + "\n" +
+"Address: " + this.address + "\n" +
+"Phone: " + this.phone + "\n" +
+"Course: " + this.course
+
+}
+
+this.Loading = function () {
+    return "Loading " + this.name + " " + this.address + " started.";
+}
+
+}
+
+console.log(Student.prototype);
+
+var JohnBenson = new Student("John Benson", "High Park 36", "(507) 833-3567", "Geography");
+
+console.log(JohnBenson.name);
+console.log(JohnBenson.__proto__ === Student.prototype);
+console.log(Student.prototype.__proto__ === Object.prototype);
+console.log(Function.prototype.__proto__ === Object.prototype);
+console.log(Student.__proto__ === Function.prototype);
+console.log(Object.__proto__ === Function.prototype);
+console.log(Function.__proto__ === Function.prototype);
+
+let Student1 = new Student("John Benson", "High Park 36", "(507) 833-3567", "Geography");
+let Student2 = new Student("Jack Benson", "High Park 38", "(507) 833-3568", "Mathematics");
+let Student3 = new Student("Steven Benson", "High Park 37", "(507) 833-3569", "Industrial Design");
+
+let Student1Name = Student1.getName();
+let Student1Info = Student1.getInfo();
+
+console.log(Student1Name);
+console.log(Student1Info);
+
+let Student2Name = Student2.getName();
+let Student2Info = Student2.getInfo();
+
+console.log(Student2Name);
+console.log(Student2Info);
+
+let Student3Name = Student3.getName();
+let Student3Info = Student3.getInfo();
+
+console.log(Student3Name);
+console.log(Student3Info);
+
+    </script>
+</body>
+</html>
